@@ -37,7 +37,7 @@ document.getElementById('next').addEventListener('click', nextProfile);
 function nextProfile() {
 const currentProfile = profiles.next().value;
 
-if(currentProfile !== undefined) {
+if(currentProfile != undefined) {
   document.getElementById('profileDisplay').innerHTML = `
   <ul class="list-group">
   <li class="list-group-item">Name: ${currentProfile.name}</li>
@@ -62,8 +62,7 @@ function profileIterator(profiles) {
     next: function() {
       return nextIndex < profiles.length ? 
       {value: profiles[nextIndex++], done: false} :
-      {value: true}
+      {value: undefined}
     }
   };
 }
-
